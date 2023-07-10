@@ -6,6 +6,7 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 
 import java.util.Properties;
+import java.util.Random;
 import java.util.concurrent.ExecutionException;
 
 public class NewOrdemMain {
@@ -13,7 +14,12 @@ public class NewOrdemMain {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
         KafkaProducer<String, String> produce = new KafkaProducer<String, String>(properties());
-        String value = "123123, 67523 , 789456";
+
+        int mensagem1 = new Random().nextInt(1001) + 1000;
+        int mensagem2 = new Random().nextInt(4001) + 1000;
+        int mensagem3 = new Random().nextInt(6001) + 1000;
+
+        String value = mensagem1 + ", " + mensagem2 + ", " + mensagem3;
         ProducerRecord<String, String> record = new ProducerRecord<String, String>("ECOMMERCE_NEW_ORDER", value, value);
 
         produce.send(record, (data, ex) -> {
