@@ -33,7 +33,7 @@ public class NewOrdemMain {
                     + " / offset " + data.offset()
                     + " / timestamp " + data.timestamp());
         };
-        String email ="Bem-vindo, seu pedido será processado.";
+        String email = "Bem-vindo, seu pedido será processado.";
         var emailRecord = new ProducerRecord<>("ECOMMERCE_SEND_EMAIL", email, email);
         produce.send(record, callback).get();
         produce.send(emailRecord, callback).get();
