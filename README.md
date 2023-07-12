@@ -4,7 +4,6 @@
 
 
 - Configurações no windows
--
 
 Para executar o Kafka localmente em seu computador com Windows, siga estas etapas:
 
