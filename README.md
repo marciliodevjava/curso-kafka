@@ -54,9 +54,13 @@ bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
 
 bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic LOJA_NOVO_PEDIDO
 
->pedido1,500.00
->pedido2,780.98
-etc...
+> pedido1,500.00
+
+> pedido2,780.98
+
+> pedido3,150.15
+
+> pedido4,1280.80
 
 - List as mensagem desdo primiro pedido
 
