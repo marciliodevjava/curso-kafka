@@ -1,5 +1,4 @@
-# curso-kafka
-Cursos de Kafka
+# kafka
 
 - Kafka: Produtores, Consulmidores e streams.
 
