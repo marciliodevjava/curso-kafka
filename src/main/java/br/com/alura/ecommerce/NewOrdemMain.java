@@ -8,6 +8,7 @@ import org.apache.kafka.common.serialization.StringSerializer;
 
 import java.util.Properties;
 import java.util.Random;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
 public class NewOrdemMain {
@@ -20,8 +21,10 @@ public class NewOrdemMain {
         int mensagem2 = new Random().nextInt(4001) + 1000;
         int mensagem3 = new Random().nextInt(6001) + 1000;
 
+        String key = UUID.randomUUID().toString();
+
         String value = mensagem1 + ", " + mensagem2 + ", " + mensagem3;
-        ProducerRecord<String, String> record = new ProducerRecord<String, String>("ECOMMERCE_NEW_ORDER", value, value);
+        ProducerRecord<String, String> record = new ProducerRecord<String, String>("ECOMMERCE_NEW_ORDER",key, value);
 
         Callback callback = (data, ex) -> {
             if (ex != null) {
@@ -34,7 +37,9 @@ public class NewOrdemMain {
                     + " / timestamp " + data.timestamp());
         };
         String email = "Bem-vindo, seu pedido será processado.";
-        var emailRecord = new ProducerRecord<>("ECOMMERCE_SEND_EMAIL", email, email);
+        ProducerRecord<String, String> emailRecord = new ProducerRecord<>("ECOMMERCE_SEND_EMAIL", key, email);
+
+
         produce.send(record, callback).get();
         produce.send(emailRecord, callback).get();
     }
