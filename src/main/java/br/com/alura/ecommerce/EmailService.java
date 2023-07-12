@@ -17,12 +17,12 @@ public class EmailService {
             if (!records.isEmpty()) {
                 System.out.println("Encontrei " + records.count() + " registros");
                 for (var record : records) {
-                    System.out.println("------------------------------------------");
+                    System.out.println("------------------------------------------------");
                     System.out.println("Enviando e-mail");
-                    System.out.println(record.key());
-                    System.out.println(record.value());
-                    System.out.println(record.partition());
-                    System.out.println(record.offset());
+                    System.out.println("KEY: " + record.key());
+                    System.out.println("VALUE: " + record.value());
+                    System.out.println("PARTITIONS: " + record.partition());
+                    System.out.println("OFFSET: " + record.offset());
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
