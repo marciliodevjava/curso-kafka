@@ -24,13 +24,13 @@ Encontre o arquivo server.properties e altere "#listeners=PLAINTEXT://:9092" par
 
 - Copy code
 
-bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+> WINDOWS: bin\windows\zookeeper-server-start.bat config\zookeeper.properties
 
 - Inicie o servidor Kafka: Em uma nova janela do prompt de comando (CMD), navegue até o diretório do Kafka e execute o seguinte comando para iniciar o servidor Kafka:
 
 - Copy code
 
-bin\windows\kafka-server-start.bat config\server.properties
+> WINDOWS: bin\windows\kafka-server-start.bat config\server.properties
 
 O Kafka agora está sendo executado localmente em sua máquina.
 
@@ -38,7 +38,7 @@ O Kafka agora está sendo executado localmente em sua máquina.
 
 - Copy code
 
-bin\windows\kafka-topics.bat --create --topic meu-topico --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+> WINDOWS: bin\windows\kafka-topics.bat --create --topic meu-topico --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
 
 Agora você tem o Kafka em execução no seu computador com Windows. Você pode explorar outras funcionalidades, como produção e consumo de mensagens, usando as ferramentas fornecidas pelo Kafka, como kafka-console-producer e kafka-console-consumer. Certifique-se de consultar a documentação oficial do Kafka para obter mais informações sobre como utilizar essas ferramentas e desenvolver aplicativos Kafka.
 
@@ -48,11 +48,11 @@ bin\windows\kafka-topics.bat --create --bootstrap-server localhost:9092 --replic
 
 - Lista os tropic no kafka:
 
-bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
+> WINDOWS: bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
 
 - Rodar o produtor
 
-bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic LOJA_NOVO_PEDIDO
+> WINDOWS: bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic LOJA_NOVO_PEDIDO
 
 > pedido1,500.00
 
@@ -64,8 +64,8 @@ bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic LOJA
 
 - List as mensagem desdo primiro pedido
 
-bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic LOJA_NOVO_PEDIDO --from-beginning
+> WINDOWS: bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic LOJA_NOVO_PEDIDO --from-beginning
 
 - Aumentar o número de partições de um topic
 
-bin\windows\kafka-topics.bat --alter --bootstrap-server localhost:9092 --topic ECOMMERCE_NEW_ORDER --partitions 3
+> WINDOWS: bin\windows\kafka-topics.bat --alter --bootstrap-server localhost:9092 --topic ECOMMERCE_NEW_ORDER --partitions 3
