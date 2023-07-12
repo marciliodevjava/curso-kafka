@@ -31,6 +31,7 @@ bin\windows\zookeeper-server-start.bat config\zookeeper.properties
 - Copy code
 
 bin\windows\kafka-server-start.bat config\server.properties
+
 O Kafka agora está sendo executado localmente em sua máquina.
 
 - Crie um tópico: Para testar a funcionalidade do Kafka, você pode criar um tópico. Abra uma nova janela do prompt de comando (CMD) e navegue até o diretório do Kafka. Execute o seguinte comando para criar um tópico chamado "meu-topico":
@@ -38,6 +39,7 @@ O Kafka agora está sendo executado localmente em sua máquina.
 - Copy code
 
 bin\windows\kafka-topics.bat --create --topic meu-topico --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+
 Agora você tem o Kafka em execução no seu computador com Windows. Você pode explorar outras funcionalidades, como produção e consumo de mensagens, usando as ferramentas fornecidas pelo Kafka, como kafka-console-producer e kafka-console-consumer. Certifique-se de consultar a documentação oficial do Kafka para obter mais informações sobre como utilizar essas ferramentas e desenvolver aplicativos Kafka.
 
 - Criando um tropic no Kafka:
