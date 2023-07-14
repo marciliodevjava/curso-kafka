@@ -39,7 +39,6 @@ public class NewOrdemMain {
         String email = "Bem-vindo, seu pedido será processado.";
         ProducerRecord<String, String> emailRecord = new ProducerRecord<>("ECOMMERCE_SEND_EMAIL", key, email);
 
-
         produce.send(record, callback).get();
         produce.send(emailRecord, callback).get();
     }
