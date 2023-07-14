@@ -24,7 +24,7 @@ public class NewOrdemMain {
         String key = UUID.randomUUID().toString();
 
         String value = mensagem1 + ", " + mensagem2 + ", " + mensagem3;
-        ProducerRecord<String, String> record = new ProducerRecord<String, String>("ECOMMERCE_NEW_ORDER",key, value);
+        ProducerRecord<String, String> record = new ProducerRecord<String, String>("ECOMMERCE_NEW_ORDER", key, value);
 
         Callback callback = (data, ex) -> {
             if (ex != null) {
